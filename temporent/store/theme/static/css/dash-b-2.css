@@ -1,0 +1,10 @@
+{% tailwind_css %}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+*{
+    font-family: 'Josefin Sans', sans-serif;
+    box-sizing: border-box;
+}

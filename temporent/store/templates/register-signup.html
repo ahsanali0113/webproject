@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+{% load tailwind_tags %}
+<head>
+    {% tailwind_css %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration form</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/register.css' %}">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <style>
+        .loginto{
+    color: #f9004d;
+    }
+    input#name , input#email ,input#pswd1 ,input#pswd2 {
+        width: 300px;
+        border: 1px solid #ddd;
+        border-radius: 3px;
+        outline: 0;
+        padding: 7px;
+        background-color: #fff;
+        box-shadow: inset 1px 1px 5px rgba(0,0,0,0.3);
+        color: black;
+    }
+    </style>
+
+
+    <title>Register Form</title>
+</head>
+
+
+<body>
+{% include 'messages.html' %}
+<header>
+    <a href="/" style="text-decoration:none"><h2 class="logo">Tempo<span>rent</span></h2></a>
+</header>
+<br>
+<hr>
+<div class="main">
+    <div class="Register">
+        <h3>Sign Up to Temporent</h3>
+
+
+        <form id="register" action="/registration/" method="post">
+            {% csrf_token %}
+
+            <label> Name: </label>
+
+            <input type="text" name="name" id="name" placeholder="Enter Your Full Name" required>
+
+            <br><br>
+            <label>Email: </label>
+            <br>
+            <input type="email" name="email" id="email" placeholder="Your email" required>
+            <br><br>
+            <label>Password : </label>
+            <br>
+            <input type="password" name="pswd1" id="pswd1" placeholder="Enter your Password" required>
+            <br><br>
+
+            <label>Confirm Password : </label>
+
+            <input type="password" name="pswd2" id="pswd2" placeholder="Confirm your Password" required>
+            <br><br>
+
+
+            <input type="submit" id="submit" name="submit" value="Sign Up">
+
+            <div class="already_reg"> Already registered? <a href="/login/">Login</a></div>
+
+
+        </form>
+
+
+    </div>
+
+</div>
+
+<div class="foot">
+    <hr>
+    <p> Terms of use </p>
+    <p> Privacy Policy </p>
+    <p> Help & Support </p>
+</div>
+
+</body>
+</html>

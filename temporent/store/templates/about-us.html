@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+{% load tailwind_tags %}
+<head>
+    {% tailwind_css %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <title> About Us pg  </title>
+    <link rel="stylesheet" href="{%static 'css/about-us.css'%}">
+<style>
+nav{
+    color: white;
+    background-color:  rgb(249, 0, 77);
+}
+.btn{
+    color: white;
+    background-color: rgb(249, 0, 77);
+    border: 3px transparent white;
+    border-radius: 6px;
+    padding: 10px 20px 10px 20px;
+    font-size: 25px;
+    margin-left: 80px;
+    position: relative;
+    bottom: 30px;
+}
+a:hover{
+    background-color: rgb(205, 0, 65);
+}
+
+</style>
+</head>
+<body class="bg-white">
+  
+    <nav>
+        <div class=" flex text-3xl ml-36 p-2" ><a href="/" > Temporent </a></div>
+    </nav>
+
+    <div class="flex flex-wrap lg:ml-20 justify-center md:justify-start max-w-xl mt-0 md:my-12">
+        <h1 class="font-bold text-5xl mt-10 md:text-6xl lg:text-7xl text-center md:text-left">Splendid<br> Online dealing <br> experience.</h1>
+
+    </div>
+   
+    <img src="{% static 'img/back-0.jpg' %}" class=" w-1/3 float-right rounded-xl relative bottom-[300px] right-12 ">
+    <a href="/registration/" class=" btn"  >
+    Join us
+
+    </a> <br> <br>
+
+<h1 class=" font-bold text-5xl text-pink m-3 inline-block ">  What are we?  
+<p class="font-normal text-lg text-black"> 
+    Pakistan is among economically developing countries and like any other developing nation, the affluence of the country depends on the working class. More accurately termed as the middle.class sector. With the huge economic gap between the rich and the poor in Pakistan. The divide is filled with the people belonging to the middle class. Our main aim is to facilitate these sort of peoples who doesn’t have ample money to spend on themselves or people who might want to earn some extra cash.
+    <br> <br>
+On our Website / Application everyone can list their inessential items which they rarely uses in their daily life and then can make profits out of them. Lenders can go to our website and list their spare items for rent , Borrowers will search items they want to borrow and then they can directly chat with each other on website itself. Contacts will be safe and sound for both B&L. Lenders other details i.e facebook account , gmails will be there if they want to contact them on any other social media platform. They themselves can choose or choose not to pay the payment online. There are two  basic entities on our website.
+    <br> <br>
+    Fist one is Lender. Lender will rent/lend his spare products. He will publish separate posts for each products he is going to lend. For example if you have spare pair of shoes which you hardly wore once every 5-6 months , you can easily rent it out and earn some extra money on it. All you have to go to our website and go to our lender dashboard you will see a form related to your items , you can fill the form with required inforamtion and freely post it on our site. </p>
+<br>
+<p class="font-normal text-lg text-black ">   Next one is Borrower. Borrower will borrowes the product that Lender has published. He will be able to see posts from various Lenders. This is for people who are temporarily need of shoes , three-piece suits , coutures but they does not really have the money due to their financial status. They can't really buy 7-8k of suit for ocassions that comes once or twice a year. That' why our website will help them by showing these different items they can rent. All they have to do is to go to our website Borrower dashboard and see related posts.</p>
+
+<br><br>
+</h1>
+
+
+
+</body>
+</html>

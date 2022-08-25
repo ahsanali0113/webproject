@@ -1,0 +1,19 @@
+{% tailwind_css %}
+@tailwind base;
+@tailwind components;
+
+.head{
+    @apply  text-pink text-4xl underline;
+}
+@tailwind utilities;
+
+
+body{
+font-family: 'Josefin Sans', sans-serif;
+
+}
+span{
+    color: #f9004d;
+}
+
+

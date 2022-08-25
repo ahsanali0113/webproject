@@ -1,0 +1,22 @@
+{% tailwind_css %}
+@tailwind base;
+@tailwind components;
+
+.logo{
+    @apply text-white cursor-pointer text-4xl mt-2 ml-2 mb-3;
+        
+}
+.head{
+    @apply  text-pink text-4xl underline;
+}
+@tailwind utilities;
+
+
+body{
+font-family: 'Josefin Sans', sans-serif;
+background-color: #191919;
+
+}
+span{
+    color: #f9004d;
+}

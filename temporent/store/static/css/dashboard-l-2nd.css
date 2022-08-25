@@ -1,0 +1,48 @@
+{% tailwind_css %}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* 
+@layer components{
+    
+.inpt{
+    @apply m-3  ml-12 block;
+}
+.inpt-res{
+    @apply m-1 ml-1 mb-2 block;
+}
+
+.in-edit{
+    @apply p-1 mb-10  rounded-sm ml-20  border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out;
+}
+
+.in-edit-res {
+    @apply  mb-7  rounded-sm ml-6 border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-1  leading-8 transition-colors duration-200 ease-in-out;
+}
+
+
+.btn{
+    @apply px-4 py-1 rounded-lg bg-pink float-right mx-4 hover:bg-light-pink; 
+}
+}
+ */
+
+
+
+*{
+    font-family: 'Josefin Sans', sans-serif;
+    box-sizing: border-box;
+}
+
+option{
+    color: rgb(55 65 81);
+    padding: 3px;
+}
+
+.city{
+    color: rgb(249 ,0 ,70);
+}
+
+span{
+    color: rgb(249, 0, 77);
+}

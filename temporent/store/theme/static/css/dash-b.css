@@ -1,0 +1,33 @@
+{% tailwind_css %}
+@tailwind base;
+@tailwind components;
+
+.icon{
+    @apply text-lg cursor-pointer ;
+}
+.logo{
+    @apply text-white cursor-pointer font-bold text-4xl;}
+
+@tailwind utilities;
+
+
+
+
+*{
+    font-family: 'Josefin Sans', sans-serif;
+    box-sizing: border-box;
+}
+
+
+
+
+#bye {
+    width: 0;
+	height: 0;
+	border-left: 9px solid transparent;
+	border-right: 9px solid transparent;
+	border-bottom: 18px solid #191919;
+    position: absolute;
+    bottom: 177px; left: 75px;
+    }
+    

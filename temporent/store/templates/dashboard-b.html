@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %} {% load tailwind_tags %}
+
+<head>
+    {% tailwind_css %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/tr-logo.jpg" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/dash-b.css' %}">
+
+    <script src="https://kit.fontawesome.com/e728390324.js" crossorigin="anonymous"></script>
+
+    <script src="{% static 'js/dash-b.js' %}"></script>
+    <title> Dashboard </title>
+    <style>
+        button,
+        nav {
+            background-color: #f9004d;
+        }
+        
+        a:nth-child(1) {
+            color: #f9004d;
+        }
+        
+        i {
+            position: relative;
+            right: 130px;
+            color: #f9004d;
+            border-left: 1px solid #f9004d;
+            padding-left: 5px;
+        }
+        input[type="text"]{
+            width: 400px;
+            padding: 8px 10px 8px 10px;
+        }
+    </style>
+
+</head>
+
+<body class=" bg-gray-100">
+
+    <header>
+        <nav class="flex flex-row justify-between text-white items-center p-2">
+            <a href="/">
+                <div class="text-3xl ml-36 text-white "> Temporent</div>
+            </a>
+
+            <form action="{% url 'search' %}" method="POST">
+                {% csrf_token %}
+                <input type="text" name="name" placeholder="What are you looking for?" class="text-black rounded-lg ">
+                <input type="submit" name="submit" value="">
+            </form>
+            <!-- <input type="search"  name="email" placeholder="What products you are looking for?"
+            class="py-2 px-2 rounded-xl w-1/3  text-black" >
+             <i class="fa-solid fa-magnifying-glass icon ">   </i> -->
+
+            <!-- <i class="fa-solid fa-magnifying-glass icon relative right-16 p-[11px] text-pink border-pink border-l-2 pl-1 h-10 "></i>  -->
+
+            <div class="space-x-4 flex items-center mr-36">
+                <!-- <i class="fa-regular fa-bell icon "></i> -->
+                <!-- <i class="fa-solid fa-envelope icon"></i> -->
+                <a href="/dashboard/" class="bg-white border-2 border-solid border-transparent font-bold px-3 py-2 rounded-2xl">
+                Become Lender </a>
+                <!-- <i class="fa-solid fa-question icon"></i> -->
+                <!-- <i class="fa-solid fa-user icon" id="account"></i> -->
+
+            </div>
+        </nav>
+
+
+        <!-- Dropdown MENU -->
+        <!-- <div class="relative top-1 right-[77px] ">
+        <ul class="flex-col bg-black text-white text-[15px] inline-block pr-10 p-2 space-y-3 rounded-md float-right relative">
+            <li><a href=""> Profile </a></li>
+            <li><a href=""> Billing </a></li>
+            <li><a href=""> Settings </a></li>
+            <li><a href=""> Become a Lender </a></li>
+            <li><a href=""> Log out </a></li>
+            <div id="bye"></div>
+
+        </ul>
+
+    </div> -->
+
+        <script src="dash-b.js"></script>
+    </header>
+
+    <div class="bg-black inline-block text-white pt-5 pb-8 px-3 m-4 rounded-md text-center ">
+        <p class="flex content-start">Hi User!</p>
+        <p>Would you like to lend your free products?</p>
+        <button class="bg-pink rounded-xl py-2 px-10 mt-5 hover:bg-light-pink  "> Click Here</button>
+
+    </div>
+
+    <h1 class="text-4xl relative mt-10 pl-14"> Most Popular Gigs: </h1>
+
+    <section class="md:h-full -mt-6 flex items-center text-gray-600  ">
+        <div class="container px-5 mx-auto">
+            <div class="text-center mb-12">
+
+            </div>
+            <div class="flex flex-wrap -m-4">
+                {% for data in data %}
+                <div class="p-4 sm:w-1/2 lg:w-1/4">
+                    <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
+                        <img class="lg:h-48 md:h-32 w-full object-cover object-center" src="/media/{{data.photo_one}}" alt="blog">
+                        <div class="pt-3 pr-6 pl-6 pb-6  ">
+                            <h2 class="text-base font-medium text-indigo-300 mb-1">{{ data.date }}</h2>
+                            <a href="/product_details/{{ data.id }}">
+                                <h1 class="text-2xl font-semibold mb-1">{{ data.title }}</h1>
+                            </a>
+                            <p class="leading-relaxed mb-1"> {{ data.description|safe }} </p>
+                            <div class="flex items-center flex-wrap ">
+                                <a class="text-indigo-300 inline-flex items-center cursor-pointer md:mb-2 lg:mb-0">Read More
+                                <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"
+                                     fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M5 12h14"></path>
+                                    <path d="M12 5l7 7-7 7"></path>
+                                </svg>
+                            </a>
+
+                            </div>
+                            <hr>
+                            <p class="mt-3 "> PKR {{ data.price }} &emsp; &emsp; &emsp; </p>
+                        </div>
+
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer Section -->
+    <footer class="relative w-full h-[80px] mt-32 bg-black flex flex-col items-center justify-center ">
+        <!-- h-[400px] above -->
+
+        <!-- <h2 class="logo">Tempo<span class="text-pink">rent</span></h2>
+
+
+        <p class="relative text-pink top-3 text-sm"> About us | Terms of use | Privacy Policy | Help & Support </p>
+        <br>
+        <div class="border text-white w-full mt-3"></div> -->
+
+        <h1 class=" flex self-start text-white p-2"><i class="fa-solid fa-copyright"></i> &nbsp; Temporent ltd 2022. </h1>
+    </footer>
+
+
+</body>
+
+</html>

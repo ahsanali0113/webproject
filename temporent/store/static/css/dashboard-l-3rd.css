@@ -1,0 +1,4 @@
+{% tailwind_css %}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

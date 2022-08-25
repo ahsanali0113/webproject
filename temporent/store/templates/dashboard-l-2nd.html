@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+{% load tailwind_tags %}
+<head>
+    {% tailwind_css %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/dashboard-l-2nd.css' %}">
+    <link rel="stylesheet" href="{% static 'css/dash-l.css' %}">
+
+
+    <title> dash-2 </title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+          rel="stylesheet">
+
+
+          <style>
+
+            .btn , nav{
+                color: white;
+            
+                background-color:  rgb(249, 0, 77);;
+            }
+            button:hover{
+                background-color: rgb(252, 93, 143);
+            }
+            
+            </style>
+            
+
+</head>
+<body>
+
+<!-- <nav class="bg-pink text-white">
+    <div class=" flex text-3xl ml-36 p-2 "><a href="/"> Temporent </a></div>
+</nav> -->
+
+<nav>
+    <div class=" flex text-3xl ml-36 p-2" ><a href="/" > Temporent </a></div>
+</nav>
+
+
+<form action="/dashboard/" method="post" class="bg-black text-white" enctype="multipart/form-data">
+    {% csrf_token %}
+    <br>
+    <h1 class="text-2xl ml-3"> Personal Information: </h1>
+    <i class="text-slate-500 ml-3"> For potential buyers to get to know you better all these information will appear on
+        your profile </i>
+    <br> <br>
+    <hr>
+    <br>
+    <i class="text-slate-500 ml-3"> *Mandatory Fields </i> <br>
+
+    <label class="m-3  ml-12 block"> Full Name <span>*</span> </label>
+    <input type="text" name="fname" placeholder="First Name" class="p-1 mb-10  rounded-sm ml-20  border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" required>
+    <input type="text" name="lname" placeholder="Last Name" class="p-1 mb-10  rounded-sm ml-20  border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+
+    <label class="m-3  ml-12 block"> Phone Number <span>*</span> </label>
+    <input type="number" name="number" placeholder="+923000000000" class="p-1 mb-10  rounded-sm ml-20  border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" required>
+
+
+    <label class="m-3  ml-12 block"> City <span>*</span> </label>
+    <select id="Location" name="location" required class="p-1 mb-10  rounded-sm ml-20  border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+        <option value="" disabled selected>Select The City</option>
+        <option value="Islamabad">Islamabad</option>
+        <option class="city" value="" disabled>--Punjab cities--</option>
+        <option value="Ahmadpur East">Ahmadpur</option>
+        <option value="Alipur">Alipur</option>
+        <option value="Arifwala">Arifwala</option>
+        <option value="Attock">Attock</option>
+        <option value="Bhera">Bhera</option>
+        <option value="Bhalwal">Bhalwal</option>
+        <option value="Bahawalnagar">Bahawalnagar</option>
+        <option value="Bahawalpur">Bahawalpur</option>
+        <option value="Bhakkar">Bhakkar</option>
+        <option value="Burewala">Burewala</option>
+        <option value="Chakwal">Chakwal</option>
+        <option value="Chichawatni">Chichawatni</option>
+        <option value="Chiniot">Chiniot</option>
+        <option value="Daska">Daska</option>
+        <option value="Dera Ghazi Khan">Dera Ghazi Khan</option>
+        <option value="Dina">Dina</option>
+        <option value="Dipalpur">Dipalpur</option>
+        <option value="Faisalabad">Faisalabad</option>
+        <option value="Ferozewala">Ferozewala</option>
+        <option value="Fateh Jhang">Fateh Jang</option>
+        <option value="Ghakhar Mandi">Ghakhar Mandi</option>
+        <option value="Gojra">Gojra</option>
+        <option value="Gujranwala">Gujranwala</option>
+        <option value="Gujrat">Gujrat</option>
+        <option value="Hafizabad">Hafizabad</option>
+        <option value="Haveli Lakha">Haveli Lakha</option>
+        <option value="Jatoi">Jatoi</option>
+        <option value="Jattan">Jattan</option>
+        <option value="Jaranwala">Jaranwala</option>
+        <option value="Jhang">Jhang</option>
+        <option value="Jhelum">Jhelum</option>
+        <option value="Kalabagh">Kalabagh</option>
+        <option value="Kasur">Kasur</option>
+        <option value="Khanewal">Khanewal</option>
+        <option value="Khanpur">Khanpur</option>
+        <option value="Kharian">Kharian</option>
+        <option value="Khushab">Khushab</option>
+        <option value="Kot Addu">Kot Addu</option>
+        <option value="Jauharabad">Jauharabad</option>
+        <option value="Lahore">Lahore</option>
+        <option value="Layyah">Layyah</option>
+        <option value="Liaquat Pur">Liaquat Pur</option>
+        <option value="Malakwal">Malakwal</option>
+        <option value="Mailsi">Mailsi</option>
+        <option value="Mandi Bahauddin">Mandi Bahauddin</option>
+        <option value="Mianwali">Mianwali</option>
+        <option value="Multan">Multan</option>
+        <option value="Murree">Murree</option>
+        <option value="Muridke">Muridke</option>
+        <option value="Muzaffargarh">Muzaffargarh</option>
+        <option value="Narowal">Narowal</option>
+        <option value="Okara">Okara</option>
+        <option value="Pakpattan">Pakpattan</option>
+        <option value="Pattoki">Pattoki</option>
+        <option value="Qaimpur">Qaimpur</option>
+        <option value="Qila Didar Singh">Qila Didar Singh</option>
+        <option value="Rabwah">Rabwah</option>
+        <option value="Rahim Yar Khan">Rahim Yar Khan</option>
+        <option value="Rawalpindi">Rawalpindi</option>
+        <option value="Sadiqabad">Sadiqabad</option>
+        <option value="Sahiwal">Sahiwal</option>
+        <option value="Sarai Alamgir">Sarai Alamgir</option>
+        <option value="Sargodha">Sargodha</option>
+        <option value="Shakargarh">Shakargarh</option>
+        <option value="Sheikhupura">Sheikhupura</option>
+        <option value="Sialkot">Sialkot</option>
+        <option value="Siranwali">Siranwali</option>
+        <option value="Taxila">Taxila</option>
+        <option value="Toba Tek Singh">Toba Tek Singh</option>
+        <option value="Vehari">Vehari</option>
+        <option value="Wah Cantonment">Wah Cantonment</option>
+        <option value="Wazirabad">Wazirabad</option>
+
+        <option class="city" value="" disabled>--Sindh Cities--</option>
+        <option value="Badin">Badin</option>
+        <option value="Bhirkan">Bhirkan</option>
+        <option value="Chak">Chak</option>
+        <option value="Dadu">Dadu</option>
+        <option value="Dokri">Dokri</option>
+        <option value="Ghotki">Ghotki</option>
+        <option value="Haala">Haala</option>
+        <option value="Hyderabad">Hyderabad</option>
+        <option value="Jacobabad">Jacobabad</option>
+        <option value="Karachi">Karachi</option>
+        <option value="Khairpur">Khairpur</option>
+        <option value="Kotri">Kotri</option>
+        <option value="Larkana">Larkana</option>
+        <option value="Mirpur Khas">Mirpur Khas</option>
+        <option value="Mithi">Mithi</option>
+        <option value="Naushara">Naushara</option>
+        <option value="Nawabshah">Nawabshah</option>
+        <option value="Nazimabad">Nazimabad</option>
+        <option value="Qasimabad">Qasimabad</option>
+        <option value="Rohri">Rohri</option>
+        <option value="Sakrand">Sakrand</option>
+        <option value="Shahdadkot">Shahdadkot</option>
+        <option value="Shahdadpur">Shahdadpur</option>
+        <option value="Shikarpaur">Shikarpaur</option>
+        <option value="Sukkur">Sukkur</option>
+        <option value="Tangwani">Tangwani</option>
+        <option value="Thatta">Thatta</option>
+
+        <option class="city" value="" disabled>--Khyber Cities--</option>
+        <option value="Abbottabad">Abbottabad</option>
+        <option value="Alpuri">Alpuri</option>
+        <option value="Banda Daud Shah">Banda Daud Shah</option>
+        <option value="Bannu">Bannu</option>
+        <option value="Chitral">Chitral</option>
+        <option value="Darya Khan">Darya Khan</option>
+        <option value="Dera Ismail Khan">Dera Ismail Khan</option>
+        <option value="Drosh">Drosh</option>
+        <option value="Hangu">Hangu</option>
+        <option value="Haripur">Haripur</option>
+        <option value="Kohat">Kohat</option>
+        <option value="Kulachi">Kulachi</option>
+        <option value="Lakki Marwat">Lakki Marwat</option>
+        <option value="Mansehra">Mansehra</option>
+        <option value="Mardan">Mardan</option>
+        <option value="Nowshera">Nowshera</option>
+        <option value="Peshawar">Peshawar</option>
+        <option value="Swabi">Swabi</option>
+        <option value="Swat">Swat</option>
+        <option value="Tordher">Tordher</option>
+
+        <option class="city" value="" disabled>--Balochistan Cities--</option>
+        <option value="Barkhan">Barkhan</option>
+        <option value="Chagai">Chagai</option>
+        <option value="Dera Bugti">Dera Bugti</option>
+        <option value="Jafarabad">Jafarabad</option>
+        <option value="Jhal Magsi">Jhal Magsi</option>
+        <option value="Kacchi">Kacchi</option>
+        <option value="Kalat">Kalat</option>
+        <option value="Killa Saifullah">Killa Saifullah</option>
+        <option value="Lehri">Lehri</option>
+        <option value="Loralai">Loralai</option>
+        <option value="Mastung">Mastung</option>
+        <option value="Musakhel">Musakhel</option>
+        <option value="Nasirabad">Nasirabad</option>
+        <option value="Quetta">Quetta</option>
+        <option value="Sibi">Sibi</option>
+        <option value="Sohbatpur">Sohbatpur</option>
+        <option value="Ziarat">Ziarat</option>
+
+    </select>
+
+
+    <label class="m-3  ml-12 block"> Address </label>
+    <textarea name="address" id="" cols="26" rows="5" class="p-1 mb-10  rounded-sm ml-20  border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"></textarea>
+
+    <label class="m-3  ml-12 block"> CNIC <span>*</span> </label>
+    <input type="number" name="cnic" placeholder="" class="p-1 mb-5  rounded-sm ml-20  border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out " required>
+    <br>
+
+    <!-- <button class="btn"> <a href="dashboard-l-3rd.html"> Next </a> </button> -->
+    <!-- <input class="btn" type="submit" value="Save">   -->
+    <!-- <button class="btn"> <a href=""> Save </a> </button> -->
+
+    <hr>
+
+
+<!-- hjkhhkj -->
+
+<!-- <nav class="bg-pink text-white">   
+  <div class=" flex text-3xl ml-16 p-2 "> <a href="dashboard-l-2nd.html"> <i class="fa-solid fa-arrow-left-long cursor-pointer"> </i> Temporent </a>  </div>
+  </nav>  -->
+
+    <h1 class="text-2xl ml-3 mt-5"> Post Information: </h1>
+    <i class="text-slate-500 ml-3"> All of these details will appear under your gig/post </i>
+    <br> <br> <br>
+
+    <h1 class=" text-center text-2xl "> Post your Gig </h1>
+
+    <label class="m-3  ml-12 block"> Title: </label>
+    <input type="text" name="title" placeholder="Title of the post" class="p-1 mb-10  rounded-sm ml-20  border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out w-3/4" required>
+
+
+    <label class="m-3  ml-12 block"> Description </label>
+    <textarea name="description" cols="130" rows="4" class="p-1 mb-10  rounded-sm ml-20  border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out w-3/4"></textarea>
+
+    <label class="m-3  ml-12 block" required> Categories:
+        <br><br>
+        <div class=" border-2 p-2 w-1/2 ml-8">
+
+            <input type="checkbox" name="checkbox[]" value="clothes">
+            <label> Clothes </label>
+            <input type="checkbox" name="checkbox[]" value="waistcoatPentcoat" class="ml-[80px]">
+            <label> Waistcoats , Pentcoats </label>
+            <br>
+            <input type="checkbox" name="checkbox[]" value="couture">
+            <label> Couture </label>
+            <input type="checkbox" name="checkbox[]" value="cameras" class="ml-[76px]">
+            <label> Cameras </label>
+            <br>
+            <input type="checkbox" name="checkbox[]" value="books">
+            <label> Books </label>
+            <input type="checkbox" name="checkbox[]" value="others" class="ml-[91px]">
+            <label> Others </label>
+            <br>
+            <input type="checkbox" name="checkbox[]" value="makeup">
+            <label> Makeup </label>
+            <br>
+            <input type="checkbox" name="checkbox[]" value="jewellery">
+            <label> Jewellery , Bracelets </label>
+            <br>
+            <input type="checkbox" name="checkbox[]" value="shoes">
+            <label> Shoes </label>
+            <br>
+            <input type="checkbox" name="checkbox[]" value="footwear">
+            <label> Footwear </label>
+            <br>
+            <input type="checkbox" name="checkbox[]" value="sports items">
+            <label> Sports Items </label>
+            <br>
+            <input type="checkbox" name="checkbox[]" value="games">
+            <label> Video Games CD </label>
+            <br>
+            <input type="checkbox" name="checkbox[]" value="watches">
+            <label> Watches </label>
+            <br>
+            <input type="checkbox" name="checkbox[]" value="accesories">
+            <label> Accesories </label>
+            <br>
+            <input type="checkbox" name="checkbox[]" value="tools">
+            <label> Tools </label>
+        </div>
+    </label>
+
+    <label class="m-3  ml-12 block"> Price: </label>
+    <input type="number" name="price" placeholder="PKR" class="p-1 mb-10  rounded-sm ml-20  border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out w-3/4" required>
+
+
+    <label class="m-3  ml-12 block"> Photos </label>
+    <input type="file" name="pic" placeholder="PKR" class="p-1 mb-10  rounded-sm ml-20  border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" required>
+    <i class="fa-solid fa-image"></i>
+    <input type="file" name="pic_two" placeholder="PKR" class="p-1 mb-10  rounded-sm ml-20  border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" required>
+
+    <br>
+    <button type="submit" class="btn px-6 py-2 mb-5 mt-5 rounded-lg ml-12 hover:bg-light-pink cursor-pointer"> Post Now
+    </button>
+
+    <hr>
+    <br> <br>
+
+</form>
+
+
+</body>
+</html>

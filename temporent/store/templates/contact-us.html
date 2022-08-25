@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+{%load static%}
+{% load tailwind_tags %}
+<head>
+    {% tailwind_css %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap" rel="stylesheet">
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <link rel="stylesheet" href="{%static 'css/contact.css'%}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+          integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+          <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
+    <title> contact-us</title>
+
+</head>
+<body>
+<section class="text-white body-font relative">
+    <form action="/contact/" method="POST">
+        {% csrf_token %}
+        <div class="container px-5 py-24 mx-auto">
+            <div class="flex flex-col text-center w-full mb-12">
+                <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-white">Contact Us</h1>
+                <div class=" w-full md:mx-[305px] md:w-1/2 mt-0.5 pt-2 border-t border-gray-200  "></div>
+
+                <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Leave us a message to get in touch. </p>
+            </div>
+
+            <div class="lg:w-1/2 md:w-2/3 mx-auto">
+                <div class="flex flex-wrap -m-2">
+                    <div class="p-2 w-1/2">
+                        <div class="relative">
+                            <label for="name" class="leading-7 text-sm text-white">Name</label>
+                            <input type="text" placeholder="Enter Your Name" id="name" name="name"
+                                   class="w-full rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                        </div>
+                    </div>
+                    <div class="p-2 w-1/2">
+                        <div class="relative">
+                            <label for="email" class="leading-7 text-sm text-white">Email</label>
+                            <input type="email" placeholder="Enter Your Email" id="email" name="email"
+                                   class="w-full rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                        </div>
+                    </div>
+                    <div class="p-2 w-full">
+                        <div class="relative">
+                            <label for="message" class="leading-7 text-sm text-white">Message</label>
+                            <textarea id="message" placeholder="Type a message here..." name="message"
+                                      class="w-full rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"></textarea>
+                        </div>
+                    </div>
+                    <div class="p-2 w-full">
+                        <button id="btn" type="submit" class="flex mx-auto text-white border-0 py-2 px-8 focus:outline-none text-lg">
+                            Submit
+                        </button>
+                    </div>
+                    <div class="p-2 w-full pt-8 mt-8 border-t border-gray-200 text-center">
+                        <a id="mail">rent.tempo@gmail.com</a>
+                        <p> Our Social Media Platforms <br>
+                        </p>
+                        <footer>
+                            <div class="social">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-dribbble"></i></a>
+                            </div>
+                        </footer>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </form>
+</section>
+
+</body>
+</html>

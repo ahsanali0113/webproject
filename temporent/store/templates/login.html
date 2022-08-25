@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+{% load tailwind_tags %}
+<head>
+    {% tailwind_css %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'css/login.css'%}">
+    <!-- <link rel="stylesheet" href="{%static 'css/register.css'%}"> -->
+
+    <style>
+
+        input#name{
+            border: 0;
+            background: none;
+            display: block;
+            margin:20px auto;
+            text-align: center;
+            border: 2px solid #f9004d;
+            padding: 14px 10px;
+            width: 240px;
+            outline: none;
+            color: white;
+            border-radius: 24px;
+            transition: 0.25s;
+        }
+        
+        .box{
+            width: 350px;
+            padding: 40px;
+            position: absolute;
+            top: 60%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            background: #101010;
+            text-align: center;
+            border-radius: 15px;
+        }
+        
+        .logo{
+	color: white;
+	font-size: 35px;
+	letter-spacing: 1px;
+	cursor: pointer; 
+    margin: 20px 0 0 20px;
+    font-weight: bold;
+    }
+
+    .stn:focus {
+            width: 280px;
+            border-color: white;
+        }
+        .box input[type="password"]:focus{
+            width: 280px;
+            border-color: white;
+        }
+     span{
+            color: #f9004d;
+          }
+        
+            </style>
+
+</head>
+<body>
+{% include 'messages.html' %}
+
+    <header>
+        <a href="/" style="text-decoration:none">	<h2 class="logo">Tempo<span>rent</span></h2>  </a>
+    </header> <br>
+    <hr>
+
+    <form class="box" action="/login/" method="post">
+        {% csrf_token %}
+        <h1>Login</h1>
+        <input type="name" class="stn" name="name" id="name" placeholder="Enter your name">
+        <input type="password" name="password" id="password" placeholder="Enter your Password">
+        <input type="submit" name="Submit" value="Login"> 
+        
+       <div> Don't have an account? <a href="/registration/">  Signup Here </a> </div>
+    </form>
+</body>
+</html>

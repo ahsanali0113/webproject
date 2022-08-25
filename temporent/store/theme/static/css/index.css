@@ -1,0 +1,94 @@
+{% tailwind_css %}
+@tailwind base;
+@tailwind components;
+
+.logo{
+    @apply text-white cursor-pointer font-bold text-4xl;
+        
+}
+.btn{
+    @apply bg-pink text-white border-2 border-solid border-transparent font-bold px-6 py-2 rounded-3xl duration-300 hover:scale-125;
+	
+}
+.heading{
+	@apply text-white text-6xl font-bold;
+}
+.para{
+@apply leading-7 tracking-wider mb-11 text-lg text-light-pink;
+}
+.heading1{
+	@apply text-white text-2xl mb-4 ;
+}
+.icon{
+	@apply w-[45px] h-[45px] flex items-center justify-center bg-pink rounded-3xl my-5 mx-3 text-white text-xl hover:scale-150 ;
+}
+
+
+@tailwind utilities;
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Josefin Sans', sans-serif;
+    box-sizing: border-box;
+}
+
+span{
+    color: #f9004d;
+}
+nav ul li{
+	list-style-type: none;
+	display: inline-block;
+	padding: 10px  25px;
+}
+nav ul li a{
+	color: white;
+	text-decoration: none;
+	font-weight: bold;
+	text-transform: capitalize;
+}
+nav ul li a:hover{
+	color: #f9004d;
+	transition: .4s;
+}
+nav ul li a:hover{
+	color: #f9004d;
+	transition: .4s;
+}
+
+.search form{
+	width: 380px;
+	max-width: 100%;
+	position: relative;
+	bottom: 7px;
+}
+.search form input:first-child{
+	display: inline-block;
+	width: 100%;
+	padding: 10px 100px 10px 11px;
+	border: 2px solid #f9004d;
+	outline: none;
+	border-radius: 30px;
+}
+.search form input:last-child{
+	position: absolute;
+	display: inline-block;
+	outline: none;
+	border: none;
+	padding: 7px 23px;
+	border-radius: 30px;
+	background-color:#f9004d;
+	color: white;
+	box-shadow: 0px 0px 5px #000, 0px 0px 15px #858585;
+	top: 5px;
+	right: 4px; 
+	cursor: pointer;
+}
+html, body {
+    width: 100%;
+    display: table;
+ }
+
+/* body {
+	overflow-x:hidden;  
+   } */
